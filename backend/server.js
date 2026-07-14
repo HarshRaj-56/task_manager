@@ -12,7 +12,8 @@ const app = express()
 const allowedOrigins = [
   "http://localhost:3000",  // Local development
   "http://localhost:5000",  // Local development alternative
-  "https://task-manager-client-blush.vercel.app", // Production frontend (update with your actual URL after deployment)
+  "https://task-manager-client-blush.vercel.app", // Production frontend
+  "https://task-manager-rnvud4gxi-surajkumar8709692791-5488s-projects.vercel.app", // New deployed frontend
   process.env.FRONTEND_URL  // Dynamic frontend URL from env
 ].filter(Boolean)
 
