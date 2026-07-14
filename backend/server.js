@@ -8,8 +8,16 @@ const errorHandler = require('./middleWare/errorHandler')
 mongoDB()
 const app = express()
 
+// CORS configuration - allow multiple origins for dev and prod
+const allowedOrigins = [
+  "http://localhost:3000",  // Local development
+  "http://localhost:5000",  // Local development alternative
+  "https://task-manager-client-blush.vercel.app", // Production frontend (update with your actual URL after deployment)
+  process.env.FRONTEND_URL  // Dynamic frontend URL from env
+].filter(Boolean)
+
 app.use(cors({
-  origin: ["https://task-manager-client-blush.vercel.app"],
+  origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
